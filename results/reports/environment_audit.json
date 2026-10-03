@@ -1,0 +1,55 @@
+{
+  "os": {
+    "platform": "win32",
+    "release": "nt",
+    "name": "Windows",
+    "version": "10.0.22000",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD"
+  },
+  "ram": {
+    "total_gb": 7.95,
+    "available_gb": 0.71,
+    "used_percent": 91
+  },
+  "storage": {
+    "C:\\": {
+      "total_gb": 226.85,
+      "free_gb": 11.96,
+      "used_gb": 214.89
+    },
+    "D:\\": {
+      "total_gb": 100.26,
+      "free_gb": 53.22,
+      "used_gb": 47.04
+    }
+  },
+  "python": {
+    "version": "3.14.6",
+    "executable": "C:\\Python314\\python.exe"
+  },
+  "pytorch": {
+    "version": "2.14.1+cpu",
+    "cuda_available": false
+  },
+  "gpu": {
+    "hardware_present": true,
+    "name": "NVIDIA GeForce GT 710",
+    "vram_mb": 2048,
+    "architecture": "Kepler (Compute Capability 3.5)",
+    "cuda_supported_by_torch_2x": false,
+    "active_device": "cpu",
+    "rationale": "NVIDIA GeForce GT 710 uses Kepler microarchitecture (sm_35), which is deprecated and unsupported in PyTorch 2.x. Additionally, 2GB VRAM is insufficient for stable PyTorch CUDA context overhead. CPU execution is the verified, reliable fallback."
+  },
+  "libraries": {
+    "torch": "2.14.1+cpu",
+    "torchvision": "0.29.1+cpu",
+    "matplotlib": "3.11.2",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "imagehash": "4.3.2",
+    "PIL": "12.3.0",
+    "yaml": "6.0.3",
+    "tqdm": "4.70.0"
+  }
+}

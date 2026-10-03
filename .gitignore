@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyTorch checkpoints and models (avoid GitHub 100MB per-file limit)
+*.pt
+*.pth
+*.ckpt
+checkpoints/
+experiments/*/checkpoints/
+
+# Data directories (raw zip and extracted image arrays)
+*.zip
+"9 Facial Expressions you need/"
+9 Facial Expressions you need/
+data/raw/
+data/processed/
+data/synthetic*/
+data/augmented/
+
+# Experiments & Logs
+logs/
+*.log
+.system_generated/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE & local settings
+.vscode/
+.idea/
+.agent/
+temp_*.db

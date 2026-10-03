@@ -1,0 +1,102 @@
+{
+  "project": {
+    "name": "Adaptive-Quality-Controlled-cWGAN-GP",
+    "version": "1.0.0",
+    "author": "Research Team",
+    "seed": 42
+  },
+  "dataset": {
+    "name": "9 Facial Expressions for YOLO",
+    "raw_zip_path": "C:/Users/mitra/Downloads/archive.zip",
+    "root_dir": "data",
+    "raw_dir": "data/raw",
+    "processed_dir": "data/processed",
+    "splits_dir": "data/splits",
+    "synthetic_dir": "data/synthetic",
+    "augmented_dir": "data/augmented",
+    "image_size": 64,
+    "channels": 3,
+    "num_classes": 9,
+    "class_names": [
+      "angry",
+      "contempt",
+      "disgust",
+      "fear",
+      "happy",
+      "natural",
+      "sad",
+      "sleepy",
+      "surprised"
+    ],
+    "normalization": [
+      -1.0,
+      1.0
+    ]
+  },
+  "models": {
+    "latent_dim": 100,
+    "class_embedding_dim": 100,
+    "generator": {
+      "feature_maps": 64,
+      "activation": "relu",
+      "output_activation": "tanh"
+    },
+    "critic": {
+      "feature_maps": 64,
+      "activation": "leaky_relu",
+      "leaky_relu_slope": 0.2,
+      "spectral_norm": false
+    }
+  },
+  "training": {
+    "target_epochs": 1000,
+    "baseline_reference_epochs": 200,
+    "pilot_epochs": 5,
+    "batch_size": 64,
+    "critic_iterations": 5,
+    "lr_g": 0.0001,
+    "lr_d": 0.0001,
+    "beta1": 0.0,
+    "beta2": 0.9,
+    "lambda_gp": 10.0,
+    "optimizer": "adam",
+    "checkpoint_interval": 1,
+    "sample_generation_interval": 5,
+    "history_checkpoint_interval": 10,
+    "num_workers": 0,
+    "pin_memory": false
+  },
+  "filtering": {
+    "stage1_critic": {
+      "method": "percentile",
+      "validation_quantile": 0.35
+    },
+    "stage2_similarity": {
+      "max_cosine_similarity": 0.85,
+      "feature_extractor": "resnet18"
+    },
+    "stage3_duplicate": {
+      "hash_algorithm": "phash",
+      "max_hamming_distance": 6
+    },
+    "stage4_diversity": {
+      "algorithm": "k_medoids",
+      "diversity_metric": "cosine"
+    }
+  },
+  "classifier": {
+    "architecture": "resnet18",
+    "pretrained": true,
+    "num_classes": 9,
+    "epochs": 50,
+    "lr": 0.001,
+    "batch_size": 64,
+    "early_stopping_patience": 10
+  },
+  "hardware": {
+    "preferred_device": "cpu",
+    "allow_cuda": false,
+    "mixed_precision": false,
+    "ram_threshold_gb": 0.5
+  }
+}

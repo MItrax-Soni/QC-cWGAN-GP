@@ -1,0 +1,4 @@
+Method,Accuracy,Macro_F1,Minority_Recall
+Baseline (Original),0.2064,0.1951,0.4679
+Traditional Augmentation,0.2329,0.215,0.5567
+Proposed cWGAN-GP + Quality Filter,0.191,0.204,0.577

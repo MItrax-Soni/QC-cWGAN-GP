@@ -1,0 +1,7 @@
+Model,Accuracy (%),Macro F1 (%),Minority Recall (%)
+No Augmentation (Baseline),27.3,23.39,37.11
+Traditional Augmentation,28.89,28.32,50.11
+VAE-based Augmentation,26.83,24.96,37.8
+Vanilla cGAN Augmentation,22.64,22.87,53.39
+cWGAN-GP (No Filtering),21.52,20.22,41.69
+cWGAN-GP + Quality Filter (Proposed),24.06,23.32,52.96

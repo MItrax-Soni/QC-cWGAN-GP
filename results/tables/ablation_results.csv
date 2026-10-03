@@ -1,0 +1,6 @@
+Ablation_Setting,Retained_Samples,Retention_Rate,Quality_Control,Diversity_Guaranteed
+No Filtering (Raw Generated),40,100.0,None,False
+Stage 1 (Critic Filter Only),20,50.0,Wasserstein Score Quantile,False
+Stage 1 + 2 (Critic + Similarity),20,50.0,Score + ResNet Feature Bounds,False
+Stage 1 + 2 + 3 (+ pHash Unique),20,50.0,Score + Sim + Perceptual Hash,False
+Proposed (All 4 Stages + Adaptive),12,30.0,Full 4-Stage Adaptive Filtering,True
